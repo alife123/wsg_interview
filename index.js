@@ -15,10 +15,15 @@ let maxInt = 0;
 // function will return the largest occurring number
 function getGreatestOccurence(array) {
     
+    //check if array is valid 
+    if(array.length == 0) 
+        return null;
+
     // forEach will iterate through array
     array.forEach(function(num) {
-        // since there is nothing in the object at first, it will add one to the zero
+        // since there is nothing in the object at first, it will add one
         if(charObj[num]) {
+            // add 1 to the object value each time the number appears
             charObj[num]++;
         } else {
             // assign a 1 if it only appears once 
@@ -39,4 +44,17 @@ function getGreatestOccurence(array) {
 }
 
 // run using node with the file name and the output should show highest recurring in array
-console.log(getGreatestOccurence(arr));
+
+console.log(getGreatestOccurence(arr)); //should output 8 as the answer 
+
+
+
+//Test Code 
+
+let newArr = [222, "Hello", 4 , 2, 222, 222, -4, 1000, null, "Hello", 4];
+
+//console.log(getGreatestOccurence(newArr)); //should output 222 and ignore the strings
+
+
+let newArr1 = [];
+//console.log(getGreatestOccurence(newArr));
